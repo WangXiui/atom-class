@@ -1,6 +1,6 @@
 {
-  "name": "@atom/class",
-  "version": "0.0.1-alpha.1",
+  "name": "atom-class",
+  "version": "1.0.0-alpha.1",
   "description": "A class library that frequently used. You can use directly without declaring.",
   "style": "css/atom.css",
   "sass": "scss/atom.scss",
