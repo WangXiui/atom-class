@@ -1,0 +1,261 @@
+$colorType: (
+	// 灰色、一级边框色
+	DCDFE6: #DCDFE6,
+	//强调文字，标签、icon,可编辑、跳转文字入口
+	456FFF: #456fff,
+	//重要按钮hover状态
+	688AFF: #688AFF,
+	//次要按钮边框色
+	A2B7FF: #A2B7FF,
+	//次要按钮背景色
+	EAF4FF: #EAF4FF,
+	//错误提示色
+	FE5353: #FE5353,
+	//危险提示色
+	F9AC38: #F9AC38,
+	//成功提示色
+	67C23A: #67C23A,
+	//静默提示色
+	//次要文字、提示信息颜色
+	//三级边框色，分割线颜色及卡片边框色
+	909399: #909399,
+	//主要、标题文字色
+	303133: #303133,
+	//正文、常规文字色
+	//二级边框色，输入框边框、次要按钮边框色
+	606266: #606266,
+	//不可点击色、文本框内提示
+	//四级边框色，分割线颜色及卡片边框色
+	C0C4CC: #C0C4CC,
+	// 登录弹窗warning字体颜色
+	E6A23C: #E6A23C,
+	//整体页面背景色
+	F4F5FA: #F4F5FA,
+	//标题栏、构件级列表颜色
+	FFF: #FFF,
+	//列表选中背景、分类选中背景、次要按钮hover 状态颜色
+	FCFDFF: #FCFDFF,
+	//表头背景颜色
+	FAFBFF: #FAFBFF,
+	F6F8FF: #F6F8FF,
+	FDF6EC: #FDF6EC,
+	tspt: transparent,
+);
+
+//常用数字变量，（border、border-radius)
+$constNum: (
+	1: 1px,
+	2: 2px,
+	3: 3px,
+	5: 5px,
+	8: 8px,
+	10: 10px,
+	16: 16px,
+);
+
+//常用百分比
+$percentage: (
+	0: 0,
+	50per: 50%,
+	100per: 100%,
+);
+
+//常用小数
+$decimalTypes: (
+	0: 0,
+	dot3: 0.3,
+	dot5: 0.5,
+	dot7: 0.7,
+	1: 1,
+);
+
+//方向
+$directions: (
+	t: top,
+	r: right,
+	b: bottom,
+	l: left
+);
+
+//margin，padding
+$spaceTypes: (
+	m: margin,
+	p: padding
+);
+$spaceSizes: (
+	2: 2px,
+	4: 4px,
+	8: 8px,
+	16: 16px,
+	24: 24px,
+	32: 32px,
+	40: 40px,
+	48: 48px,
+	64: 64px,
+	72: 72px,
+	0: 0px,
+);
+
+//字体大小
+$fontSizeMap: (
+	12: 12px,
+	14: 14px,
+	16: 16px,
+	18: 18px,
+	20: 20px,
+	24: 24px,
+	32: 32px,
+);
+
+// flex水平布局
+$flex-jc: (
+	start: flex-start,
+	end: flex-end,
+	center: center,
+	between: space-between,
+	around: space-around,
+	evenly: space-evenly
+);
+// flex垂直布局
+$flex-ai: (
+	start: flex-start,
+	end: flex-end,
+	center: center,
+	baseline: baseline,
+	stretch: stretch
+);
+// flex其他属性
+$flex-other: (
+	wrap: (
+		w: wrap,
+		no: nowrap,
+	),
+	direction: (
+		r: row,
+		c: column
+	),
+	grow: (
+		0: 0,
+		1: 1,
+		2: 2
+	),
+	shrink: (
+		0: 0,
+		1: 1,
+		2: 2
+	),
+);
+
+//边框类型
+$borderStyleType: (
+	ds: dashed,
+	dt: dotted,
+	sd: solid,
+);
+
+//使用颜色类型
+$colorUse: (
+	bgc: background-color,
+	c: color,
+);
+
+//定位类型
+$positionTypes: (
+	rel: relative,
+	abs: absolute,
+	fix: fixed,
+	sti: sticky,
+);
+
+//盒子类型
+$displayTypes: (
+	i: inline,
+	b: block,
+	ib: inline-block,
+	f: flex,
+	g: grid,
+	n: none,
+);
+
+//水平居中
+$textAlignTypes: (
+	l: left,
+	c: center,
+	r: right,
+);
+
+//指针类型
+$cursorTypes: (
+	def: default,
+	poi: pointer,
+	mov: move,
+);
+
+//几何类型
+$geometricTypes: (
+	w: width,
+	h: height,
+	mw: min-width,
+	mh: min-height,
+);
+//几何数值类型
+$geometricNumsTypes: (
+	0: 0,
+	20: 20px,
+	100: 100%,
+	init: initial,
+);
+
+//无边框类型
+$noneTypes: (
+	bd-t-n: border-top,
+	bd-r-n: border-right,
+	bd-b-n: border-bottom,
+	bd-l-n: border-left,
+);
+
+//字重
+$fontWeightTypes: (
+	100: 100,
+	200: 200,
+	300: 300,
+	400: 400,
+	500: 500,
+	600: 600,
+	700: 700,
+	800: 800,
+	900: 900,
+	ini: initial,
+	nor: normal,
+	bol: bold,
+);
+
+//行高
+$LHTypes: (
+	1: 1,
+	nor: normal,
+);
+
+//浮动
+$floatTypes: (
+	l: left,
+	r: right,
+	n: none,
+);
+
+//滚动
+$overflowTypes: (
+	a: auto,
+	h: hidden,
+	s: scroll,
+	ini: initial,
+);
+
+//阴影
+$boxShadowTypes: (
+	primary: 0 2px 12px 0 rgb(0 0 0 / 10%),
+);
+
+
+
+
