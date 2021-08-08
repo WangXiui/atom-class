@@ -1,0 +1,187 @@
+/**
+ @name: atom
+ @author: wkk
+ @date: 2021-07-22
+ @description：
+*/
+
+@import "variables/variables";
+
+/* margin padding */
+@each $typeKey,$type in $spaceTypes {
+	@each $sizeKey,$size in $spaceSizes {
+		//每条边：类似mt0, mr0, mb0, ml0
+		@each $dirKey,$dir in $directions {
+			.#{$typeKey}#{$dirKey}#{$sizeKey} {
+				#{$type}-#{$dir}: #{$size};
+			}
+		}
+
+		//对角边: mx0, my0
+		.#{$typeKey}x#{$sizeKey} {
+			#{$type}-left: #{$size};
+			#{$type}-right: #{$size};
+		}
+		.#{$typeKey}y#{$sizeKey} {
+			#{$type}-top: #{$size};
+			#{$type}-bottom: #{$size};
+		}
+
+		//所有边: ma0
+		.#{$typeKey}a#{$sizeKey} {
+			#{$type}: #{$size};
+		}
+	}
+}
+
+
+/* font-size */
+@each $key, $val in $fontSizeMap {
+	.f#{$key} {
+		font-size: #{$val};
+	}
+}
+
+/* justify-content */
+@each $key, $val in $flex-jc {
+	.justify-#{$key} {
+		justify-content: #{$val};
+	}
+}
+
+/* align-items */
+@each $key, $val in $flex-ai {
+	.align-#{$key} {
+		align-items: #{$val};
+	}
+}
+
+/* flex other attribute */
+@each $key, $val in $flex-other {
+	@each $childKey, $childVal in $val {
+		.flex-#{$childKey} {
+			flex-#{$key}: #{$childVal};
+		}
+	}
+}
+
+/* border */
+@each $numKey, $num in $constNum {
+	@each $dirKey, $dir in $directions {
+		.bd-#{$dirKey}-#{$numKey} {
+			border-#{$dir}: #{$num} solid map-get($colorType, 909399);
+		}
+	}
+	//对角边
+	.bd-x-#{$numKey} {
+		border-left: #{$num} solid map-get($colorType, 909399);
+		border-right: #{$num} solid map-get($colorType, 909399);
+	}
+	.bd-y-#{$numKey} {
+		border-top: #{$num} solid map-get($colorType, 909399);
+		border-bottom: #{$num} solid map-get($colorType, 909399);
+	}
+	//所有边
+	.bd-#{$numKey} {
+		border: #{$num} solid map-get($colorType, 909399);
+	}
+}
+
+/* border-radius */
+@each $key, $val in map-merge($constNum, $percentage) {
+	.bdrs-#{$key} {
+		border-radius: $val;
+	}
+}
+
+/* background-color color */
+@each $typeKey, $type in $colorUse {
+	@each $colorKey, $color in $colorType {
+		.#{$typeKey}-#{$colorKey} {
+			#{$type}: #{$color};
+		}
+	}
+}
+
+/* position */
+@each $key, $val in $positionTypes {
+	.pos-#{$key} {
+		position: $val;
+	}
+}
+
+/* display */
+@each $key, $val in $displayTypes {
+	.dis-#{$key} {
+		display: $val;
+	}
+}
+
+/* text-align */
+@each $key, $val in $textAlignTypes {
+	.ta#{$key} {
+		text-align: $val;
+	}
+}
+
+/* cursor */
+@each $key, $val in $cursorTypes {
+	.cur-#{$key} {
+		cursor: $val;
+	}
+}
+
+/* width height */
+@each $typeKey, $type in $geometricTypes {
+	@each $numKey, $num in $geometricNumsTypes {
+		.#{$typeKey}#{$numKey} {
+			#{$type}: #{$num};
+		}
+	}
+}
+
+/* font-weight */
+@each $key, $val in $fontWeightTypes {
+	.fw-#{$key} {
+		font-weight: $val;
+	}
+}
+
+/* line-height */
+@each $key, $val in $LHTypes {
+	.LH-#{$key} {
+		line-height: $val;
+	}
+}
+
+/* opacity */
+@each $key, $val in $decimalTypes {
+	.opc-#{$key} {
+		opacity: $val;
+	}
+}
+
+/* float */
+@each $key, $val in $floatTypes {
+	.fl-#{$key} {
+		float: $val;
+	}
+}
+
+/* overflow */
+@each $key, $val in $overflowTypes {
+	.ovf-#{$key} {
+		overflow: $val;
+	}
+}
+
+/* box-shadow */
+@each $key, $val in $boxShadowTypes {
+	.bxsh-#{$key} {
+		box-shadow: $val;
+	}
+}
+
+
+/* composition css */
+@import "composition";

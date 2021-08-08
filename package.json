@@ -1,0 +1,50 @@
+{
+  "name": "atom-class",
+  "version": "0.0.1-alpha1",
+  "description": "A class library that frequently used. You can use directly without declaring.",
+  "style": "css/atom.css",
+  "sass": "scss/atom.scss",
+  "main": "css/atom.css",
+  "license": "MIT",
+  "author": "wangxiui",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WangXiui/atom-class.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WangXiui/atom-class/issues"
+  },
+  "homepage": "https://github.com/WangXiui/atom-class#readme",
+  "scripts": {
+    "lint": "eslint src",
+    "fix": "npm run lint --fix",
+    "commit": "git-cz",
+    "pub": "npm publish --access-public"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "grunt": "^1.4.1",
+    "grunt-contrib-connect": "^3.0.0",
+    "grunt-contrib-cssmin": "^4.0.0",
+    "grunt-contrib-less": "^3.0.0",
+    "grunt-contrib-sass": "^2.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-version": "^2.0.0",
+    "husky": "^7.0.1",
+    "load-grunt-tasks": "^5.1.0",
+    "sass": "^1.37.5"
+  },
+  "files": [
+    "css/**/*.css"
+  ]
+}
