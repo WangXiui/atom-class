@@ -1,5 +1,5 @@
 {
-  "name": "atomique-class",
+  "name": "atomique-css",
   "version": "0.0.1-alpha.1",
   "description": "A class library that frequently used. You can use directly without declaring.",
   "style": "css/atom.css",
