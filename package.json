@@ -1,11 +1,11 @@
 {
   "name": "atomique-class",
-  "version": "0.0.1-alpha.1",
+  "version": "0.0.1",
   "description": "A class library that frequently used. You can use directly without declaring.",
   "style": "css/atom.css",
   "sass": "scss/atom.scss",
   "main": "css/atom.css",
-	"private": false,
+  "private": false,
   "license": "MIT",
   "author": "wangxiui",
   "repository": {
@@ -27,6 +27,8 @@
     "@babel/preset-env": "^7.15.0",
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
+    "@lodder/grunt-postcss": "^3.0.1",
+    "autoprefixer": "^10.3.3",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.32.0",
@@ -43,8 +45,15 @@
     "grunt-version": "^2.0.0",
     "husky": "^7.0.1",
     "load-grunt-tasks": "^5.1.0",
+    "postcss": "^8.3.6",
     "sass": "^1.37.5"
   },
+  "browserslist": [
+    "> 1%",
+    "not edge <= 18",
+    "not ie 11",
+    "not op_mini all"
+  ],
   "files": [
     "css/**/*.css"
   ]

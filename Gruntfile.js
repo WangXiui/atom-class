@@ -1,3 +1,10 @@
+/**
+ * @name: Grountfile
+ * @author: 72079750
+ * @date: 2021/7/20 16:24
+ * @description：Grountfile
+ * @update: 2021/7/20 16:24
+ */
 module.exports = function (grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -16,10 +23,23 @@ module.exports = function (grunt) {
 
     },
 
+    postcss: {
+      options: {
+        processors: [
+          require('autoprefixer')()
+        ]
+      },
+      dist: {
+        src: 'css/*.css'
+        // dest: 'css/*.css',
+      }
+    },
+
     sass: {
       dist: {
         options: {
-          style: 'expanded'
+          style: 'expanded',
+          sourceMap: false
         },
         files: {
           'css/atom.css': 'scss/atom.scss'
@@ -98,6 +118,7 @@ module.exports = function (grunt) {
 
   require('load-grunt-tasks')(grunt)
 
-  grunt.registerTask('sass-task', ['sass'])
+  grunt.registerTask('sassTasks', ['sass', 'postcss'])
+  grunt.registerTask('postcss:prefix', ['postcss'])
   grunt.registerTask('default', ['connect', 'watch'])
 }

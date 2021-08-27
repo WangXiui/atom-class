@@ -6,15 +6,15 @@
 */
 
 .flex-center {
-	@extend .dis-f;
+	@extend .flex;
 	@extend .justify-center;
-	@extend .align-center;
+	@extend .items-center;
 }
 
 //页面滚动条上下间距（16）
 .border-spacing-16 {
-	@extend .bd-t-16;
-	@extend .bd-b-16;
+	@extend .border-t-16;
+	@extend .border-b-16;
 }
 
 //？说明
@@ -26,14 +26,14 @@
 	height: $size;
 	line-height: $size - 3;
 	@extend .f14;
-	@extend .bd-2;
+	@extend .border-2;
 	@extend .bgc-FFF;
 	@extend .tac;
-	@extend .pos-rel;
-	@extend .dis-ib;
-	@extend .align-center;
+	@extend .relative;
+	@extend .inline-block;
+	@extend .items-center;
 	@extend .c-909399;
-	@extend .bdrs-50per;
+	@extend .rounded-1\/2;
 
 	&::before {
 		content: "?";
@@ -51,7 +51,7 @@
 		border: 12px solid;
 		border-color: transparent transparent #f8f9fd transparent;
 		transform: translate(0, 100%);
-		@extend .pos-abs;
+		@extend .absolute;
 	}
 }
 
@@ -63,7 +63,7 @@
 	color: map-get($colorType, FFF);
 	@extend .bgc-456FFF;
 	@extend .tac;
-	@extend .pos-rel;
+	@extend .relative;
 
 	&::after {
 		right: -10px;
@@ -72,14 +72,14 @@
 		content: "";
 		transform: rotate(5deg);
 		transform-origin: left top;
-		@extend .pos-abs;
+		@extend .absolute;
 		@extend .bgc-FFF;
 	}
 }
 
 //标题前缀矩形
 .rect-prefix {
-	@extend .pos-rel;
+	@extend .relative;
 	@extend .pl16;
 
 	&::before {
@@ -87,10 +87,10 @@
 		left: 0;
 		width: 5px;
 		content: "";
-		@extend .pos-abs;
-		@extend .h100;
+		@extend .absolute;
+		@extend .h-10\/10;
 		@extend .bgc-456FFF;
-		@extend .bdrs-8;
+		@extend .rounded-8;
 	}
 }
 
@@ -105,10 +105,10 @@
 
 //模块标题样式
 .rect-title {
-	@extend .dis-ib;
+	@extend .inline-block;
 	@extend .f16;
 	@extend .mb16;
-	@extend .fw-bol;
+	@extend .font-bold;
 	@extend .c-303133;
 	@extend .rect-prefix;
 }
@@ -131,10 +131,10 @@
 		z-index: 4;
 		height: 16px;
 		content: "";
-		@extend .pos-sti;
+		@extend .sticky;
 		@extend .bgc-FFF;
-		@extend .dis-b;
-		@extend .w100;
+		@extend .block;
+		@extend .w-10\/10;
 	}
 
 	&::before {
@@ -153,14 +153,14 @@
 .sticky {
 	top: 0;
 	z-index: 4;
-	@extend .pos-sti;
+	@extend .sticky;
 }
 
 .line-clamp-4 {
 	display: -webkit-box;
 	-webkit-line-clamp: 4;
 	-webkit-box-orient: vertical;
-	@extend .ovf-h;
+	@extend .overflow-hidden;
 }
 
 .title,
@@ -174,9 +174,9 @@
 .ellipsis {
 	text-overflow: ellipsis;
 	white-space: nowrap;
-	@extend .w100;
-	@extend .ovf-h;
-	@extend .dis-ib;
+	@extend .w-10\/10;
+	@extend .overflow-hidden;
+	@extend .inline-block;
 }
 
 .serial {
@@ -186,13 +186,13 @@
 	background: #d7d7d7;
 	@extend .mr16;
 	@extend .tac;
-	@extend .bdrs-50per;
+	@extend .rounded-1\/2;
 }
 
 .input {
 	//input尾部必填符号*
 	&-require {
-		@extend .pos-rel;
+		@extend .relative;
 
 		&::after {
 			top: 50%;
@@ -201,10 +201,10 @@
 			color: red;
 			content: "*";
 			transform: translateY(-50%);
-			@extend .pos-abs;
+			@extend .absolute;
 			@extend .tac;
 			@extend .f18;
-			@extend .fw-bol;
+			@extend .font-bold;
 		}
 	}
 
@@ -216,7 +216,7 @@
 				right: 5px;
 				width: 25px;
 				content: "%";
-				@extend .pos-abs;
+				@extend .absolute;
 				@extend .tac;
 			}
 		}
@@ -226,8 +226,8 @@
 //水纹动效
 .anim-wave {
 	transition: width,height 1s;
-	@extend .pos-rel;
-	@extend .ovf-h;
+	@extend .relative;
+	@extend .overflow-hidden;
 	&:after {
 		margin: auto;
 		content: "";
@@ -240,8 +240,8 @@
 		animation: anim-out 1.75s infinite;
 		filter: blur(1px);
 		z-index: 2;
-		@extend .pos-abs;
-		@extend .bdrs-50per;
+		@extend .absolute;
+		@extend .rounded-1\/2;
 	}
 	@keyframes anim-out {
 		0% {

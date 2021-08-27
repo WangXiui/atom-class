@@ -7,11 +7,244 @@
 
 @import "variables/variables";
 
+/* cursor */
+@each $key, $val in $cursorTypes {
+	.cur-#{$key} {
+		cursor: $val;
+	}
+}
+
+/* Box Sizing */
+@each $key, $val in $boxSizing {
+	.box-#{$key} {
+		box-sizing: $val;
+	}
+}
+
+/* Display */
+@each $key, $val in $display {
+	.#{$key} {
+		display: $val;
+	}
+}
+
+/* float */
+@each $key, $val in $float {
+	.float-#{$key} {
+		float: $val;
+	}
+}
+
+/* clear */
+@each $key, $val in $clear {
+	.clear-#{$key} {
+		clear: $val;
+	}
+}
+
+/* Object Fit */
+@each $key, $val in $objectFit {
+	.object-#{$key} {
+		object-fit: $val;
+	}
+}
+
+/* Object Position */
+@each $key, $val in $objectPosition {
+	.object-#{$key} {
+		object-position: $val;
+	}
+}
+
+/* overflow */
+@each $key, $val in $overflow {
+	.overflow-#{$key} {
+		overflow: $val;
+	}
+	.overflow-x-#{$key} {
+		overflow-x: $val;
+	}
+	.overflow-y-#{$key} {
+		overflow-x: $val;
+	}
+}
+
+/* Overscroll Behavior */
+@each $key, $val in $overscrollBehavior {
+	.overscroll-#{$key} {
+		overscroll-behavior: $val;
+	}
+}
+
+/* 定位 */
+@each $key, $val in $position {
+	.#{$key} {
+		position: $val;
+	}
+}
+
+/* Top / Right / Bottom / Left */
+
+/* 可见性 */
+@each $key, $val in $visibility {
+	.#{$key} {
+		visibility: $val;
+	}
+}
+
+/* Z-Index */
+@each $key, $val in $zIndex {
+	.z-#{$key} {
+		z-index: $val;
+	}
+}
+
+
+/*
+网格布局
+*/
+
+/* Grid Template Columns */
+@each $key, $val in $gridTemplateColumns {
+	.grid-cols-#{$key} {
+		grid-template-columns: $val;
+	}
+}
+
+/* Grid Column */
+@each $key, $val in $gridColumn {
+	.col-#{$key} {
+		grid-column: $val;
+	}
+}
+
+/* Grid Column Start / End */
+@each $key, $val in $gridColumStartEnd {
+	.col-start-#{$key} {
+		grid-column-start: $val;
+	}
+	.col-end-#{$key} {
+		grid-column-end: $val;
+	}
+}
+
+/* Grid Template Rows */
+@each $key, $val in $gridTemplateRows {
+	.grid-rows-#{$key} {
+		grid-template-rows: $val;
+	}
+}
+
+/* Grid Row */
+@each $key, $val in $gridRow {
+	.row-#{$key} {
+		grid-row: $val;
+	}
+}
+
+/* Grid Row Start / End */
+@each $key, $val in $gridRowStartEnd {
+	.col-start-#{$key} {
+		grid-row-start: $val;
+	}
+	.col-end-#{$key} {
+		grid-row-end: $val;
+	}
+}
+
+/* Grid Auto Flow */
+@each $key, $val in $gridAutoFlow {
+	.grid-flow-#{$key} {
+		grid-auto-flow: $val;
+	}
+}
+
+/* Grid Auto Columns */
+@each $key, $val in $gridAutoColumns {
+	.auto-cols-#{$key} {
+		grid-auto-columns: $val;
+	}
+}
+
+/* Grid Auto Rows */
+@each $key, $val in $gridAutoColumns {
+	.auto-rows-#{$key} {
+		grid-auto-rows: $val;
+	}
+}
+
+/* Gap */
+
+
+/*
+盒对齐
+*/
+
+/* Justify Content */
+@each $key, $val in $justifyContent {
+	.justify-#{$key} {
+		justify-content: #{$val};
+	}
+}
+
+/* Justify Items */
+@each $key, $val in $justifyItemsSelf {
+	.justify-items-#{$key} {
+		justify-items: #{$val};
+	}
+}
+
+/* Justify Self */
+@each $key, $val in $justifyItemsSelf {
+	.justify-self-#{$key} {
+		justify-self: #{$val};
+	}
+}
+
+/* Align Content */
+@each $key, $val in $alignContent {
+	.content-#{$key} {
+		align-content: #{$val};
+	}
+}
+
+/* Align Items */
+@each $key, $val in $alignItems {
+	.items-#{$key} {
+		align-items: #{$val};
+	}
+}
+
+/* Align Self */
+@each $key, $val in $alignSelf {
+	.self-#{$key} {
+		align-self: #{$val};
+	}
+}
+
+/* flex other attribute */
+@each $key, $val in $flex-other {
+	@each $childKey, $childVal in $val {
+		.flex-#{$key}-#{$childKey} {
+			flex-#{$key}: #{$childVal};
+		}
+	}
+}
+
+/* Place Content */
+/* Place Items */
+/* Place Self */
+
+
+/*
+间距
+*/
+
 /* margin padding */
-@each $typeKey,$type in $spaceTypes {
-	@each $sizeKey,$size in $spaceSizes {
+@each $typeKey, $type in $spaceTypes {
+	@each $sizeKey, $size in $spaceSizes {
 		//每条边：类似mt0, mr0, mb0, ml0
-		@each $dirKey,$dir in $directions {
+		@each $dirKey, $dir in $directions {
 			.#{$typeKey}#{$dirKey}#{$sizeKey} {
 				#{$type}-#{$dir}: #{$size};
 			}
@@ -34,67 +267,100 @@
 	}
 }
 
+/* Space Between */
 
-/* font-size */
-@each $key, $val in $fontSizeMap {
+
+/*
+尺寸
+*/
+
+/* 宽度 最小宽度 最大宽度
+ * 高度 最小高度 最大高度
+*/
+@each $typeKey, $type in $geometricTypes {
+	@each $numKey, $num in $geometricNumsTypes {
+		@if index(max-w max-h, $typeKey) {
+			@if $numKey != auto {
+				.#{$typeKey}-#{$numKey} {
+					#{$type}: #{$num};
+				}
+			}
+		} @else {
+			.#{$typeKey}-#{$numKey} {
+				#{$type}: #{$num};
+			}
+		}
+	}
+}
+
+
+/*
+排版
+*/
+
+/* 字体序列 */
+
+/* 字体大小 */
+@each $key, $val in $fontSize {
 	.f#{$key} {
 		font-size: #{$val};
 	}
 }
 
-/* justify-content */
-@each $key, $val in $flex-jc {
-	.justify-#{$key} {
-		justify-content: #{$val};
+/* 字体平滑度 */
+/* 字体样式 */
+
+/* 字体粗细 */
+@each $key, $val in $fontWeight {
+	.font-#{$key} {
+		font-weight: $val;
 	}
 }
 
-/* align-items */
-@each $key, $val in $flex-ai {
-	.align-#{$key} {
-		align-items: #{$val};
+/* Font Variant Numeric
+用来控制数字变形的功能类 */
+
+/* 字母间距 letter-spacing */
+
+/* 行高 */
+@each $key, $val in $lineHeight {
+	.leading-#{$key} {
+		line-height: $val;
 	}
 }
 
-/* flex other attribute */
-@each $key, $val in $flex-other {
-	@each $childKey, $childVal in $val {
-		.flex-#{$childKey} {
-			flex-#{$key}: #{$childVal};
-		}
+/* 列表项标记类型 */
+@each $key, $val in $lineHeight {
+	.leading-#{$key} {
+		line-height: $val;
 	}
 }
 
-/* border */
-@each $numKey, $num in $constNum {
-	@each $dirKey, $dir in $directions {
-		.bd-#{$dirKey}-#{$numKey} {
-			border-#{$dir}: #{$num} solid map-get($colorType, 909399);
-		}
-	}
-	//对角边
-	.bd-x-#{$numKey} {
-		border-left: #{$num} solid map-get($colorType, 909399);
-		border-right: #{$num} solid map-get($colorType, 909399);
-	}
-	.bd-y-#{$numKey} {
-		border-top: #{$num} solid map-get($colorType, 909399);
-		border-bottom: #{$num} solid map-get($colorType, 909399);
-	}
-	//所有边
-	.bd-#{$numKey} {
-		border: #{$num} solid map-get($colorType, 909399);
+/* 列表项标记类型 */
+@each $key, $val in $listStyleType {
+	.list-#{$key} {
+		list-style-type: $val;
 	}
 }
 
-/* border-radius */
-@each $key, $val in map-merge($constNum, $percentage) {
-	.bdrs-#{$key} {
-		border-radius: $val;
+/* 列表项标记位置 */
+@each $key, $val in $listStylePosition {
+	.list-#{$key} {
+		list-style-position: $val;
 	}
 }
 
-/* background-color color */
+/* 占位文本颜色 */
+/* 占位文本不透明度 placeholder-opacity */
+
+/* 文本对齐 */
+@each $key, $val in $textAlign {
+	.ta#{$key} {
+		text-align: $val;
+	}
+}
+
+/* 文本颜色 背景色 */
 @each $typeKey, $type in $colorUse {
 	@each $colorKey, $color in $colorType {
 		.#{$typeKey}-#{$colorKey} {
@@ -103,84 +369,267 @@
 	}
 }
 
-/* position */
-@each $key, $val in $positionTypes {
-	.pos-#{$key} {
-		position: $val;
+/* 文本不透明度 text-opacity */
+
+/* 文本装饰 */
+@each $key, $val in $textDecoration {
+	.#{$key} {
+		text-decoration: $val;
 	}
 }
 
-/* display */
-@each $key, $val in $displayTypes {
-	.dis-#{$key} {
-		display: $val;
+/* 文本转换 */
+@each $key, $val in $textTransform {
+	.#{$key} {
+		text-transform: $val;
 	}
 }
 
-/* text-align */
-@each $key, $val in $textAlignTypes {
-	.ta#{$key} {
-		text-align: $val;
+/* 文本溢出 */
+
+/* 垂直对齐 */
+@each $key, $val in $verticalAlign {
+	.align-#{$key} {
+		vertical-align: $val;
 	}
 }
 
-/* cursor */
-@each $key, $val in $cursorTypes {
-	.cur-#{$key} {
-		cursor: $val;
+/* 空格 */
+@each $key, $val in $whitespace {
+	.whitespace-#{$key} {
+		white-space: $val;
 	}
 }
 
-/* width height */
-@each $typeKey, $type in $geometricTypes {
-	@each $numKey, $num in $geometricNumsTypes {
-		.#{$typeKey}#{$numKey} {
-			#{$type}: #{$num};
+/* 文本换行 */
+
+
+/*
+背景
+*/
+
+/* 背景图像固定 */
+@each $key, $val in $backgroundAttachment {
+	.bg-#{$key} {
+		background-attachment: $val;
+	}
+}
+
+/* 背景图像裁剪 */
+@each $key, $val in $backgroundClip {
+	.bg-clip-#{$key} {
+		background-clip: $val;
+	}
+}
+
+/* 背景颜色 */
+/* 背景颜色不透明度 */
+
+/* 背景图像位置 */
+@each $key, $val in $backgroundPosition {
+	.bg-#{$key} {
+		background-position: $val;
+	}
+}
+
+/* 背景图像重复 */
+@each $key, $val in $backgroundRepeat {
+	.bg-#{$key} {
+		background-repeat: $val;
+	}
+}
+
+/* 背景图像大小 */
+@each $key, $val in $backgroundSize {
+	.bg-#{$key} {
+		background-size: $val;
+	}
+}
+
+/* 背景图像 */
+/* 渐变色停止 */
+
+
+/*
+边框
+*/
+
+/* 边框圆角 */
+@each $key, $val in map-merge($constNum, $percentage) {
+	.rounded-#{$key} {
+		border-radius: $val;
+	}
+}
+
+/* 边框 */
+@each $numKey, $num in $constNum {
+	@each $dirKey, $dir in $directions {
+		.border-#{$dirKey}-#{$numKey} {
+			border-#{$dir}: #{$num} solid map-get($colorType, 909399);
 		}
 	}
-}
-
-/* font-weight */
-@each $key, $val in $fontWeightTypes {
-	.fw-#{$key} {
-		font-weight: $val;
+	//对角边
+	.border-x-#{$numKey} {
+		border-left: #{$num} solid map-get($colorType, 909399);
+		border-right: #{$num} solid map-get($colorType, 909399);
+	}
+	.border-y-#{$numKey} {
+		border-top: #{$num} solid map-get($colorType, 909399);
+		border-bottom: #{$num} solid map-get($colorType, 909399);
+	}
+	//所有边
+	.border-#{$numKey} {
+		border: #{$num} solid map-get($colorType, 909399);
 	}
 }
 
-/* line-height */
-@each $key, $val in $LHTypes {
-	.LH-#{$key} {
-		line-height: $val;
+/* 边框厚度 */
+/* 边框颜色 */
+/* 边框不透明度 border-opacity */
+/* 边框样式 */
+
+/* 分割线厚度 */
+/* 分割线颜色 */
+/* 分割线不透明度 divide-opacity */
+/* 分割线样式 */
+
+/* 轮廓环厚度 */
+/* 轮廓环颜色 ring-color */
+/* 轮廓环不透明度 ring-opacity */
+/* 轮廓环偏移厚度 ring-offset */
+/* 轮廓环偏移颜色 ring-offset-color */
+
+
+/*
+特效
+*/
+
+/* 盒阴影 */
+@each $key, $val in $boxShadow {
+	.shadow-#{$key} {
+		box-shadow: $val;
 	}
 }
 
-/* opacity */
+/* 不透明度 */
 @each $key, $val in $decimalTypes {
-	.opc-#{$key} {
+	.opacity-#{$key} {
 		opacity: $val;
 	}
 }
 
-/* float */
-@each $key, $val in $floatTypes {
-	.fl-#{$key} {
-		float: $val;
+
+/*
+表格
+*/
+
+/* 表格边框 */
+@each $key, $val in $borderCollapse {
+	.border-#{$key} {
+		border-collapse: $val;
 	}
 }
 
-/* overflow */
-@each $key, $val in $overflowTypes {
-	.ovf-#{$key} {
-		overflow: $val;
+/* 表格布局 */
+@each $key, $val in $tableLayout {
+	.table-#{$key} {
+		table-layout: $val;
 	}
 }
 
-/* box-shadow */
-@each $key, $val in $boxShadowTypes {
-	.bxsh-#{$key} {
-		box-shadow: $val;
+
+/*
+过渡和动画
+*/
+
+/* 过渡属性 transition-property */
+/* 过渡持续时间 transition-duration */
+/* 过渡计时函数 transition-timing-function */
+/* 过渡延迟 transition-delay */
+/* 动画 animation */
+
+
+/*
+转换
+*/
+
+/* 变换 transform */
+
+/* 变换原点 */
+@each $key, $val in $transformOrigin {
+	.origin-#{$key} {
+		transform-origin: $val;
 	}
 }
+
+/* 缩放 */
+/* 旋转 */
+/* 平移 */
+/* 倾斜 */
+
+
+/*
+交互
+*/
+
+/* 表单外观 appearance */
+
+/* 光标效果 */
+@each $key, $val in $cursor {
+	.cursor-#{$key} {
+		cursor: $val;
+	}
+}
+
+/* 轮廓 outline */
+/* 指向事件 pointer-events */
+
+/* 大小调整 */
+@each $key, $val in $resize {
+	.resize-#{$key} {
+		resize: $val;
+	}
+}
+
+/* 用户选择 */
+@each $key, $val in $userSelect {
+	.select-#{$key} {
+		user-select: $val;
+	}
+}
+
+
+/*
+SVG
+*/
+
+/* 填充 */
+@each $key, $val in $fill {
+	.fill-#{$key} {
+		fill: $val;
+	}
+}
+
+/* 线条 */
+@each $key, $val in $stroke {
+	.stroke-#{$key} {
+		stroke: $val;
+	}
+}
+
+/* 线条厚度 */
+@each $key, $val in $strokeWidth {
+	.stroke-#{$key} {
+		stroke-width: $val;
+	}
+}
+
+
+/*
+可访问性
+*/
+
+/* 屏幕阅读器 */
 
 
 /* composition css */
