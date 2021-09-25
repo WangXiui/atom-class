@@ -35,14 +35,14 @@
 	@extend .c-909399;
 	@extend .rounded-1\/2;
 
-	&::before {
+	&:before {
 		content: "?";
 	}
 }
 
 //三角箭头
 .triangle-b {
-	&::after {
+	&:after {
 		bottom: 0;
 		left: 0;
 		width: 0;
@@ -65,7 +65,7 @@
 	@extend .tac;
 	@extend .relative;
 
-	&::after {
+	&:after {
 		right: -10px;
 		width: 10px;
 		height: 50px;
@@ -82,7 +82,7 @@
 	@extend .relative;
 	@extend .pl16;
 
-	&::before {
+	&:before {
 		top: 0;
 		left: 0;
 		width: 5px;
@@ -96,7 +96,7 @@
 
 //必填星星
 .star {
-	&::before {
+	&:before {
 		color: #fe5353;
 		content: "*";
 		@extend .mr4;
@@ -126,8 +126,8 @@
 
 //页面顶部底部悬浮条
 .sticky-bar {
-	&::before,
-	&::after {
+	&:before,
+	&:after {
 		z-index: 4;
 		height: 16px;
 		content: "";
@@ -137,11 +137,11 @@
 		@extend .w-10\/10;
 	}
 
-	&::before {
+	&:before {
 		top: 0;
 	}
 
-	&::after {
+	&:after {
 		bottom: 0;
 	}
 
@@ -194,7 +194,7 @@
 	&-require {
 		@extend .relative;
 
-		&::after {
+		&:after {
 			top: 50%;
 			right: -10px;
 			height: auto;
@@ -211,7 +211,7 @@
 	//input suffix-%
 	&-suffix {
 		&_percentage {
-			&::after {
+			&:after {
 				top: 0;
 				right: 5px;
 				width: 25px;
