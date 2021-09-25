@@ -222,12 +222,31 @@
 	}
 }
 
-/* flex other attribute */
-@each $key, $val in $flex-other {
-	@each $childKey, $childVal in $val {
-		.flex-#{$key}-#{$childKey} {
-			flex-#{$key}: #{$childVal};
-		}
+/* flex direction */
+@each $key, $val in $flexDirection {
+	.flex-#{$key} {
+		flex-direction: #{$val};
+	}
+}
+
+/* flex wrap */
+@each $key, $val in $flexWrap {
+	.flex-#{$key} {
+		flex-wrap: #{$val};
+	}
+}
+
+/* flex grow */
+@each $key, $val in $flexGrow {
+	.flex-#{$key} {
+		flex-grow: #{$val};
+	}
+}
+
+/* flex shrink */
+@each $key, $val in $flexShrink {
+	.flex-#{$key} {
+		flex-shrink: #{$val};
 	}
 }
 
