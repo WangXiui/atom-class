@@ -5,7 +5,12 @@
  * @description：Grountfile
  * @update: 2021/7/20 16:24
  */
+const loadAll = require('load-grunt-tasks')
+const autoprefixer = require('autoprefixer')
+
 module.exports = function (grunt) {
+  grunt.file.setBase('../') // 要前置执行
+
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
@@ -18,7 +23,7 @@ module.exports = function (grunt) {
         options: {
           prefix: 'Version[:=]\\s*'
         },
-        src: ['css/atom.css', 'scss/atom.scss', 'less/atom.less']
+        src: ['css/atom.css', 'src/scss/atom.scss', 'src/less/atom.less']
       }
 
     },
@@ -26,7 +31,7 @@ module.exports = function (grunt) {
     postcss: {
       options: {
         processors: [
-          require('autoprefixer')()
+          autoprefixer()
         ]
       },
       dist: {
@@ -42,7 +47,7 @@ module.exports = function (grunt) {
           sourceMap: false
         },
         files: {
-          'css/atom.css': 'scss/atom.scss'
+          'css/atom.css': 'src/scss/atom.scss'
         }
       }
     },
@@ -53,7 +58,7 @@ module.exports = function (grunt) {
           style: 'expanded'
         },
         files: {
-          'css/atom.css': 'less/atom.less'
+          'css/atom.css': 'src/less/atom.less'
         }
       }
     },
@@ -79,7 +84,7 @@ module.exports = function (grunt) {
       },
 
       scss: {
-        files: ['scss/**/*.scss'],
+        files: ['src/scss/**/*.scss'],
         tasks: ['sass', 'cssmin'],
         options: {
           spawn: false
@@ -87,7 +92,7 @@ module.exports = function (grunt) {
       },
 
       less: {
-        files: ['less/**/*.less'],
+        files: ['src/less/**/*.less'],
         tasks: ['less', 'cssmin'],
         options: {
           spawn: false
@@ -116,7 +121,7 @@ module.exports = function (grunt) {
 
   })
 
-  require('load-grunt-tasks')(grunt)
+  loadAll(grunt)
 
   grunt.registerTask('sassTasks', ['sass', 'postcss'])
   grunt.registerTask('postcss:prefix', ['postcss'])

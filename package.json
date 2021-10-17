@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/WangXiui/atom-class#readme",
   "scripts": {
+    "dev": "babel-node scripts/build.js",
+    "grunt": "grunt --gruntfile scripts/Gruntfile.js sassTasks",
     "lint": "eslint src",
     "fix": "npm run lint --fix",
     "commit": "git-cz",
@@ -24,6 +26,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
+    "@babel/node": "^7.15.8",
     "@babel/preset-env": "^7.15.0",
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
@@ -45,6 +48,7 @@
     "grunt-version": "^2.0.0",
     "husky": "^7.0.1",
     "load-grunt-tasks": "^5.1.0",
+    "lodash": "^4.17.21",
     "postcss": "^8.3.6",
     "sass": "^1.37.5"
   },

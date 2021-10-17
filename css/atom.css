@@ -2120,21 +2120,53 @@
 用来控制数字变形的功能类 */
 /* 字母间距 letter-spacing */
 /* 行高 */
-.leading-1 {
+.leading-none {
   line-height: 1;
 }
 
-.leading-nor {
-  line-height: normal;
+.leading-tight {
+  line-height: 1.25;
+}
+
+.leading-snug {
+  line-height: 1.375;
+}
+
+.leading-normal {
+  line-height: 1.5;
+}
+
+.leading-relaxed {
+  line-height: 1.625;
+}
+
+.leading-loose {
+  line-height: 2;
 }
 
 /* 列表项标记类型 */
-.leading-1 {
+.leading-none {
   line-height: 1;
 }
 
-.leading-nor {
-  line-height: normal;
+.leading-tight {
+  line-height: 1.25;
+}
+
+.leading-snug {
+  line-height: 1.375;
+}
+
+.leading-normal {
+  line-height: 1.5;
+}
+
+.leading-relaxed {
+  line-height: 1.625;
+}
+
+.leading-loose {
+  line-height: 2;
 }
 
 /* 列表项标记类型 */
