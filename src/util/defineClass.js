@@ -6,7 +6,7 @@ export default function (className, properties) {
   const decls = _(properties).toPairs().map(([prop, value]) => {
     return postcss.decl({
       prop: _.kebabCase(prop),
-      value
+      value: `${value}`
     })
   }).value()
   return postcss.rule({
