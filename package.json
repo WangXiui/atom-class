@@ -8,6 +8,9 @@
   "private": false,
   "license": "MIT",
   "author": "wangxiui",
+  "bin": {
+    "atom": "lib/index.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/WangXiui/atom-class.git"
@@ -60,5 +63,8 @@
   ],
   "files": [
     "css/**/*.css"
-  ]
+  ],
+  "dependencies": {
+    "commander": "^8.2.0"
+  }
 }

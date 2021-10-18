@@ -4,6 +4,8 @@ import fs from 'fs'
 import path from 'path'
 import defaultConfig from '../config/defaultConfig'
 
+console.log('Start Building!')
+
 postcss([atom(defaultConfig)])
   .process('', {
     from: '',
@@ -16,3 +18,5 @@ postcss([atom(defaultConfig)])
       fs.writeFileSync(path.resolve(__dirname, '../css/atom.css.map'), res.map.toString())
     }
   }).catch(res => console.log(res))
+
+console.log('Finished Building!')

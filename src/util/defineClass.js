@@ -3,12 +3,13 @@ import _ from 'lodash'
 
 export default function (className, properties) {
   const kebabClass = _.kebabCase(className)
-  const decls = _(properties).toPairs().map(([prop, value]) => {
+  console.log(11, properties);
+  const decls = _.map(properties, (value, prop) => {
     return postcss.decl({
       prop: _.kebabCase(prop),
       value: `${value}`
     })
-  }).value()
+  })
   return postcss.rule({
     selector: `.${kebabClass}`
   }).append(decls)

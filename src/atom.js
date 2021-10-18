@@ -1,7 +1,8 @@
 import generateStyles from './lib/generateStyles'
+import defaultConfig from '../config/defaultConfig'
 
 export default (opts) => {
-  opts = opts || import('../config/defaultConfig')
+  opts = opts || defaultConfig
   return {
     postcssPlugin: 'atom',
     Once (root) {
