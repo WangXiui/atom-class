@@ -95,6 +95,16 @@ export default {
     '10/10': '1'
   },
 
+  constNum: {
+    1: '1px',
+    2: '2px',
+    3: '3px',
+    5: '5px',
+    8: '8px',
+    10: '10px',
+    16: '16px'
+  },
+
   // 方向
   directions: {
     t: 'top',
@@ -273,7 +283,7 @@ export default {
     'span-full': '1} / #{-1}'
   },
 
-  gridColumStartEnd: {
+  gridColumnStartEnd: {
     1: '1',
     2: '2',
     3: '3',
@@ -458,7 +468,7 @@ export default {
     28: '1.75rem',
     32: '32px',
     38: '2.375rem',
-    46: '2.875rem',
+    46: '2.875rem'
   },
 
   fontWeight: {

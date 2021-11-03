@@ -53,7 +53,8 @@
     "load-grunt-tasks": "^5.1.0",
     "lodash": "^4.17.21",
     "postcss": "^8.3.6",
-    "sass": "^1.37.5"
+    "sass": "^1.37.5",
+    "stylefmt": "^6.0.3"
   },
   "browserslist": [
     "> 1%",

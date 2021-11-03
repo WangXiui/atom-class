@@ -3,8 +3,8 @@ import defineClass from '../util/defineClass'
 
 export default function ({ fontWeight }) {
   return _.map(fontWeight, (classValue, className) => {
-    return defineClass(`fontWeight-${className}`, {
-      fontWeight: classValue
+    return defineClass(`font-${className}`, {
+      'font-weight': classValue
     })
   })
 }
