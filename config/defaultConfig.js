@@ -419,6 +419,26 @@ export default {
     shrink: '1'
   },
 
+  // 用于同时控制内容如何在水平和垂直方向上对齐的功能
+  placeContent: {
+    start: 'start',
+    center: 'center',
+    end: 'end',
+    between: 'space-between',
+    around: 'space-around;',
+    evenly: 'space-evenly;',
+    stretch: 'stretch'
+  },
+
+  // 用于同时控制 项目/单个项目 如何在水平和垂直方向对齐的功能类。
+  placeItemsSelf: {
+    auto: 'auto',
+    start: 'start',
+    end: 'end',
+    center: 'center',
+    stretch: 'stretch'
+  },
+
   // 几何类型
   geometricTypes: {
     w: 'width',
@@ -458,6 +478,15 @@ export default {
   text: {
 
   },
+
+  // 字体序列
+  fontFamily: {
+    sans: 'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+    serif: 'ui-serif, Georgia, Cambria, "Times New Roman", Times, serif',
+    mono: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace'
+  },
+
+  // 字体大小
   fontSize: {
     12: '.75rem',
     14: '.875rem',
@@ -471,6 +500,18 @@ export default {
     46: '2.875rem'
   },
 
+  // 字体平滑度
+  fontSmoothing: {
+    antialiased: 'antialiased',
+    'subpixel-antialiased': 'auto'
+  },
+
+  // 字体样式
+  fontStyle: {
+    italic: 'italic',
+    'not-italic': 'normal'
+  },
+
   fontWeight: {
     thin: 100,
     extralight: 200,
@@ -481,6 +522,29 @@ export default {
     bold: 700,
     extrabold: 800,
     black: 900
+  },
+
+  // 用来控制数字变形的功能类
+  fontVariantNumeric: {
+    'normal-nums': 'normal',
+    ordinal: 'ordinal',
+    'slashed-zero': 'slashed-zero',
+    'lining-nums': 'lining-nums',
+    'oldstyle-nums': 'oldstyle-nums',
+    'proportional-nums': 'proportional-nums',
+    'tabular-nums': 'tabular-nums',
+    'diagonal-fractions': 'diagonal-fractions',
+    'stacked-fractions': 'stacked-fractions'
+  },
+
+  // 字母间距
+  letterSpacing: {
+    'tracking-tighter': '-0.05em',
+    'tracking-tight': '-0.025em',
+    'tracking-normal': '0em',
+    'tracking-wide': '0.025em',
+    'tracking-wider': '0.05em',
+    'tracking-widest': '0.1em'
   },
 
   leading: {
@@ -527,6 +591,11 @@ export default {
     'normal-case': 'none'
   },
 
+  textOverflow: {
+    ellipsis: 'ellipsis',
+    clip: 'clip'
+  },
+
   verticalAlign: {
     baseline: 'baseline',
     top: 'top',
@@ -542,6 +611,16 @@ export default {
     pre: 'pre',
     'pre-line': 'pre-line',
     'pre-wrap': 'pre-wrap'
+  },
+
+  overflowWrap: {
+    'break-word': 'break-word',
+    'overflow-wrap-normal': 'normal'
+  },
+
+  wordBreak: {
+    'break-all': 'break-all',
+    'word-break-normal': 'normal'
   },
 
   backgroundAttachment: {
@@ -598,6 +677,45 @@ export default {
     fixed: 'fixed'
   },
 
+  transition: {
+    none: 'none',
+    all: 'all',
+    '': 'background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter',
+    colors: 'background-color, border-color, color, fill, stroke',
+    opacity: 'opacity',
+    shadow: 'box-shadow',
+    transform: 'transform'
+  },
+
+  transitionDuration: {
+    75: '75ms',
+    100: '100ms',
+    150: '150ms',
+    200: '200ms',
+    300: '300ms',
+    500: '500ms',
+    700: '700ms',
+    1000: '1000ms'
+  },
+
+  transitionTimingFunction: {
+    linear: 'linear',
+    in: 'cubic-bezier(0.4, 0, 1, 1)',
+    out: 'cubic-bezier(0, 0, 0.2, 1)',
+    'in-out': 'cubic-bezier(0.4, 0, 0.2, 1)'
+  },
+
+  transitionDelay: {
+    75: '75ms',
+    100: '100ms',
+    150: '150ms',
+    200: '200ms',
+    300: '300ms',
+    500: '500ms',
+    700: '700ms',
+    1000: '1000ms'
+  },
+
   transformOrigin: {
     center: 'center',
     top: 'top',
@@ -618,6 +736,21 @@ export default {
     text: 'text',
     move: 'move',
     'not-allowed': 'not-allowed'
+  },
+
+  appearance: {
+    none: 'none'
+  },
+
+  outline: {
+    none: 'transparent',
+    white: 'white',
+    black: 'black'
+  },
+
+  pointerEvents: {
+    none: 'none',
+    auto: 'auto'
   },
 
   resize: {

@@ -58,10 +58,44 @@ import userSelect from '../generators/userSelect'
 import fill from '../generators/fill'
 import stroke from '../generators/stroke'
 import strokeWidth from '../generators/strokeWidth'
+import placeItemsAndSelf from '../generators/placeItemsAndSelf'
+import placeContent from '../generators/placeContent'
+import fontFamily from '../generators/fontFamily'
+import fontSmoothing from '../generators/fontSmoothing'
+import fontStyle from '../generators/fontStyle'
+import fontVariantNumeric from '../generators/fontVariantNumeric'
+import letterSpacing from '../generators/letterSpacing'
+import textOverflow from '../generators/textOverflow'
+import wordBreak from '../generators/wordBreak'
+import overflowWrap from '../generators/overflowWrap'
+import transition from '../generators/transition'
+import transitionDuration from '../generators/transitionDuration'
+import transitionTimingFunction from '../generators/transitionTimingFunction'
+import transitionDelay from '../generators/transitionDelay'
+import appearance from '../generators/appearance'
+import outline from '../generators/outline'
+import pointerEvents from '../generators/pointerEvents'
 
 export default function ({ root, opts }) {
   // 1.生成规则
   const styles = _.flatten([
+    pointerEvents(opts),
+    outline(opts),
+    appearance(opts),
+    transitionDelay(opts),
+    transitionTimingFunction(opts),
+    transitionDuration(opts),
+    transition(opts),
+    overflowWrap(opts),
+    wordBreak(opts),
+    textOverflow(opts),
+    letterSpacing(opts),
+    fontVariantNumeric(opts),
+    fontStyle(opts),
+    fontSmoothing(opts),
+    fontFamily(opts),
+    placeContent(opts),
+    placeItemsAndSelf(opts),
     strokeWidth(opts),
     stroke(opts),
     fill(opts),
