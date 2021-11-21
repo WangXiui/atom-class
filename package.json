@@ -66,6 +66,7 @@
     "css/**/*.css"
   ],
   "dependencies": {
-    "commander": "^8.2.0"
+    "commander": "^8.2.0",
+    "fs-extra": "^10.0.0"
   }
 }
