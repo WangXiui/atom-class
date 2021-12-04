@@ -21,6 +21,7 @@ program
   .version('0.0.1')
   .usage('[options] <file ...>')
   .option('-c, --config [value]', 'Pass custom configuration')
+  .option('-r, --replace', 'replace the built-in configuration with the provided config file')
   .parse(process.argv)
 
 const options = program.opts()
