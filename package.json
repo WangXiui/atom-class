@@ -9,7 +9,7 @@
   "license": "MIT",
   "author": "wangxiui",
   "bin": {
-    "atom": "lib/index.js"
+    "atom": "scripts/cli.js"
   },
   "repository": {
     "type": "git",
