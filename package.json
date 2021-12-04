@@ -27,7 +27,10 @@
     "commit": "git-cz",
     "pub": "npm publish --access-public"
   },
-  "devDependencies": {
+  "devDependencies": {},
+  "dependencies": {
+    "commander": "^8.2.0",
+    "fs-extra": "^10.0.0",
     "@babel/core": "^7.15.0",
     "@babel/node": "^7.15.8",
     "@babel/preset-env": "^7.15.0",
@@ -64,9 +67,5 @@
   ],
   "files": [
     "css/**/*.css"
-  ],
-  "dependencies": {
-    "commander": "^8.2.0",
-    "fs-extra": "^10.0.0"
-  }
+  ]
 }
