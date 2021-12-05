@@ -1,6 +1,6 @@
 export default {
   purge: {
-    enabled: true,
+    enabled: false,
     paths: ['examples/pure-example.html']
   },
   colors: {
