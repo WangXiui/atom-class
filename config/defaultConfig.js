@@ -1,4 +1,8 @@
 export default {
+  purge: {
+    enabled: true,
+    paths: ['examples/pure-example.html']
+  },
   colors: {
     // 灰色、一级边框色
     DCDFE6: '#DCDFE6',

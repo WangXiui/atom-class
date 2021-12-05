@@ -2,6 +2,7 @@
 
 import postcss from 'postcss'
 import atom from '../src/atom'
+import purgeUnusedUtilities from '../src/lib/pureUnusedUtilities'
 import defaultConfig from '../config/defaultConfig'
 import fse from 'fs-extra'
 // import fs from 'fs/promises'
@@ -56,8 +57,10 @@ async function executePostcss () {
     const css = fse.pathExistsSync(inputFilePath)
       ? await fse.readFile(path.join(process.cwd(), inputFile))
       : ''
+    const config = await mergeConfig()
     postcss([
-      atom(await mergeConfig()),
+      atom(config),
+      purgeUnusedUtilities(config),
       stylefmt
     ])
       .process(css, {

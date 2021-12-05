@@ -1,5 +1,6 @@
 import postcss from 'postcss'
 import atom from '../src/atom'
+import purgeUnusedUtilities from '../src/lib/pureUnusedUtilities'
 import fs from 'fs'
 import path from 'path'
 import stylefmt from 'stylefmt'
@@ -9,6 +10,7 @@ console.log('Start Building!')
 
 postcss([
   atom(defaultConfig),
+  purgeUnusedUtilities(defaultConfig),
   stylefmt
 ])
   .process('', {
