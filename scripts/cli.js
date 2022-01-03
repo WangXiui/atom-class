@@ -9,6 +9,7 @@ import fse from 'fs-extra'
 import path from 'path'
 import { program } from 'commander'
 import stylefmt from 'stylefmt'
+import fs from "fs";
 
 // The current file does two things.
 // 1.You can customize the defaultconfig configuration file.
@@ -70,6 +71,9 @@ async function executePostcss () {
       })
       .then(res => {
         fse.outputFileSync(outputFile, res.css)
+        if (res.map) {
+          fse.outputFileSync(`${outputFile}.map`, res.map.toString())
+        }
       })
       .catch(err => console.log(err))
   } catch (err) {

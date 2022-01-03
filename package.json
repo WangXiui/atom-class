@@ -67,6 +67,6 @@
     "not op_mini all"
   ],
   "files": [
-    "css/**/*.css"
+    "css/*"
   ]
 }
